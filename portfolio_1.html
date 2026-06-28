@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나경원 · MLOps / AI Infrastructure Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A0E1A;
+    --surface:#111A2E;
+    --surface-2:#18233E;
+    --line:#243150;
+    --line-soft:#1B2540;
+    --text:#E6ECFA;
+    --muted:#8492B4;
+    --muted-dim:#5E6B8A;
+    --cyan:#38E1D4;
+    --blue:#5B8DEF;
+    --green:#3FD68C;
+    --amber:#F5B544;
+    --display:'Space Grotesk',sans-serif;
+    --body:'Inter',sans-serif;
+    --mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--text);
+    font-family:var(--body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      linear-gradient(rgba(36,49,80,.18) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(36,49,80,.18) 1px,transparent 1px);
+    background-size:48px 48px;
+    background-attachment:fixed;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px}
+
+  /* eyebrow / mono labels */
+  .label{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--cyan);
+  }
+  .label-dim{color:var(--muted-dim)}
+
+  /* ---------- HEADER ---------- */
+  header{padding:64px 0 40px;border-bottom:1px solid var(--line-soft)}
+  .status-row{display:flex;align-items:center;gap:10px;margin-bottom:28px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(63,214,140,.5);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(63,214,140,.45)}70%{box-shadow:0 0 0 7px rgba(63,214,140,0)}100%{box-shadow:0 0 0 0 rgba(63,214,140,0)}}
+  .status-row .label{color:var(--green)}
+  h1{
+    font-family:var(--display);
+    font-size:clamp(38px,7vw,68px);
+    font-weight:700;
+    line-height:1.02;
+    letter-spacing:-.02em;
+    margin-bottom:6px;
+  }
+  h1 .alt{color:var(--muted);font-weight:500;font-size:.42em;letter-spacing:0;vertical-align:middle;margin-left:14px}
+  .role{
+    font-family:var(--mono);
+    font-size:clamp(14px,2.2vw,18px);
+    color:var(--cyan);
+    margin-bottom:22px;
+    font-weight:500;
+  }
+  .tagline{font-size:clamp(15px,2.4vw,18px);color:var(--text);max-width:60ch;margin-bottom:8px}
+  .tagline .em{color:var(--cyan)}
+
+  /* metrics strip */
+  .metrics{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    margin-top:40px;
+    background:var(--line-soft);
+    border:1px solid var(--line-soft);
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .metric{background:var(--surface);padding:20px 18px}
+  .metric .num{font-family:var(--display);font-size:clamp(26px,4vw,38px);font-weight:700;color:var(--text);line-height:1;letter-spacing:-.02em}
+  .metric .num .unit{font-size:.5em;color:var(--cyan);margin-left:3px}
+  .metric .cap{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:9px}
+
+  /* ---------- SECTION ---------- */
+  section{padding:56px 0;border-bottom:1px solid var(--line-soft)}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:32px}
+  .sec-head h2{font-family:var(--display);font-size:clamp(22px,3.4vw,30px);font-weight:600;letter-spacing:-.01em}
+  .sec-head .idx{font-family:var(--mono);font-size:12px;color:var(--muted-dim)}
+
+  /* tech stack */
+  .stack{display:grid;grid-template-columns:160px 1fr;gap:18px 28px;align-items:start}
+  @media(max-width:620px){.stack{grid-template-columns:1fr;gap:6px 0}}
+  .stack-cat{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.06em;padding-top:5px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+  .tag{
+    font-family:var(--mono);font-size:12.5px;
+    background:var(--surface);border:1px solid var(--line);
+    color:var(--text);padding:5px 11px;border-radius:6px;
+    transition:border-color .2s,color .2s;
+  }
+  .tag:hover{border-color:var(--cyan);color:var(--cyan)}
+  .tag.key{border-color:rgba(56,225,212,.4);color:var(--cyan)}
+
+  /* projects */
+  .proj{
+    background:var(--surface);
+    border:1px solid var(--line-soft);
+    border-radius:14px;
+    padding:26px 26px 24px;
+    margin-bottom:18px;
+    transition:border-color .25s,transform .25s;
+  }
+  .proj:hover{border-color:var(--line);transform:translateY(-2px)}
+  .proj-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:14px}
+  .proj-title{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:-.01em}
+  .proj-tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:5px;white-space:nowrap}
+  .pt-core{background:rgba(56,225,212,.1);color:var(--cyan);border:1px solid rgba(56,225,212,.25)}
+  .pt-rag{background:rgba(91,141,239,.1);color:var(--blue);border:1px solid rgba(91,141,239,.25)}
+  .pt-infra{background:rgba(63,214,140,.1);color:var(--green);border:1px solid rgba(63,214,140,.25)}
+  .pt-sec{background:rgba(245,181,68,.1);color:var(--amber);border:1px solid rgba(245,181,68,.25)}
+  .proj-desc{color:var(--text);font-size:14.5px;margin-bottom:16px}
+  .proj-points{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+  .proj-points li{position:relative;padding-left:18px;font-size:13.5px;color:var(--muted)}
+  .proj-points li::before{content:'▸';position:absolute;left:0;color:var(--cyan);font-size:11px;top:1px}
+  .proj-points li b{color:var(--text);font-weight:600}
+  .proj-stack{display:flex;flex-wrap:wrap;gap:6px;padding-top:14px;border-top:1px solid var(--line-soft)}
+  .chip{font-family:var(--mono);font-size:11px;color:var(--muted);background:var(--ink);border:1px solid var(--line-soft);padding:3px 8px;border-radius:5px}
+
+  /* experience / education list */
+  .row{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line-soft)}
+  .row:last-child{border-bottom:none}
+  @media(max-width:620px){.row{grid-template-columns:1fr;gap:8px}}
+  .row-meta .when{font-family:var(--mono);font-size:12px;color:var(--cyan);margin-bottom:5px}
+  .row-meta .where{font-size:14px;color:var(--muted)}
+  .row-body h3{font-family:var(--display);font-size:17px;font-weight:600;margin-bottom:9px}
+  .row-body ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .row-body li{position:relative;padding-left:16px;font-size:13.5px;color:var(--muted)}
+  .row-body li::before{content:'—';position:absolute;left:0;color:var(--muted-dim)}
+  .cert-grid{display:flex;flex-wrap:wrap;gap:8px}
+  .cert{font-family:var(--mono);font-size:12.5px;background:var(--surface);border:1px solid var(--line);padding:7px 13px;border-radius:7px;color:var(--text)}
+  .cert .s{color:var(--muted-dim)}
+
+  /* footer */
+  footer{padding:56px 0 72px}
+  .foot-head{font-family:var(--display);font-size:clamp(24px,4vw,34px);font-weight:600;margin-bottom:24px;letter-spacing:-.01em}
+  .foot-head .em{color:var(--cyan)}
+  .links{display:flex;flex-wrap:wrap;gap:10px}
+  .link{
+    font-family:var(--mono);font-size:13px;
+    display:inline-flex;align-items:center;gap:9px;
+    background:var(--surface);border:1px solid var(--line);
+    padding:11px 16px;border-radius:8px;color:var(--text);
+    text-decoration:none;transition:border-color .2s,color .2s;
+  }
+  .link:hover{border-color:var(--cyan);color:var(--cyan)}
+  .link .k{color:var(--muted-dim)}
+  .sig{margin-top:40px;font-family:var(--mono);font-size:11px;color:var(--muted-dim);letter-spacing:.06em}
+
+  @media(max-width:620px){
+    .metrics{grid-template-columns:repeat(2,1fr)}
+    header{padding:48px 0 32px}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="status-row"><span class="dot"></span><span class="label">available for hire · MLOps</span></div>
+    <h1>나경원<span class="alt">@deco</span></h1>
+    <div class="role">MLOps · AI Infrastructure Engineer</div>
+    <p class="tagline">AI 모델을 <span class="em">실제 서비스로 안정적으로 운영</span>하는 인프라를 직접 설계하고 굴립니다. 모델 서빙·관측·자동화부터 RAG 파이프라인까지, 실험실이 아니라 <span class="em">매일 돌아가는 시스템</span> 위에서 다뤄왔습니다.</p>
+
+    <div class="metrics">
+      <div class="metric"><div class="num" data-to="21"><span class="val">0</span><span class="unit">+</span></div><div class="cap">운영 서버 노드</div></div>
+      <div class="metric"><div class="num" data-to="3"><span class="val">0</span><span class="unit">종</span></div><div class="cap">통합 AI 모델</div></div>
+      <div class="metric"><div class="num" data-to="90"><span class="val">0</span><span class="unit">+</span></div><div class="cap">모니터링 트리거</div></div>
+      <div class="metric"><div class="num" data-to="11"><span class="val">0</span><span class="unit">repo</span></div><div class="cap">운영 프로젝트</div></div>
+    </div>
+  </header>
+
+  <!-- ===== TECH STACK ===== -->
+  <section id="stack">
+    <div class="sec-head"><span class="idx">/ 01</span><h2>기술 스택</h2></div>
+    <div class="stack">
+      <div class="stack-cat">AI / MLOps</div>
+      <div class="tags">
+        <span class="tag key">LiteLLM</span><span class="tag key">Langfuse</span><span class="tag key">RAG</span>
+        <span class="tag key">GraphRAG</span><span class="tag key">ChromaDB</span><span class="tag">Ollama</span><span class="tag">vLLM</span>
+      </div>
+      <div class="stack-cat">Backend</div>
+      <div class="tags">
+        <span class="tag key">Python</span><span class="tag">FastAPI</span><span class="tag">Flask</span>
+        <span class="tag">Next.js</span><span class="tag">MySQL</span><span class="tag">SQLite</span><span class="tag">C#</span>
+      </div>
+      <div class="stack-cat">Infra / DevOps</div>
+      <div class="tags">
+        <span class="tag">Docker</span><span class="tag">Portainer</span><span class="tag">VMware vSphere</span>
+        <span class="tag">WireGuard</span><span class="tag">Zabbix</span><span class="tag">Linux</span><span class="tag">Cloudflare</span><span class="tag">OCI</span>
+      </div>
+      <div class="stack-cat">Tools</div>
+      <div class="tags">
+        <span class="tag">Git</span><span class="tag">Claude Code</span><span class="tag">rsyslog</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <div class="sec-head"><span class="idx">/ 02</span><h2>주요 프로젝트</h2></div>
+
+    <!-- P1 -->
+    <div class="proj">
+      <div class="proj-top">
+        <div class="proj-title">통합 AI 모델 게이트웨이 &amp; 관측 플랫폼</div>
+        <span class="proj-tag pt-core">CORE · MLOPS</span>
+      </div>
+      <p class="proj-desc">여러 상용 AI 모델을 단일 게이트웨이로 통합해 라우팅하고, 사용량·비용을 추적·관리하는 운영 환경을 직접 구축·운영.</p>
+      <ul class="proj-points">
+        <li><b>모델 서빙·라우팅</b> — LiteLLM 게이트웨이로 Claude·ChatGPT·Gemini 등 다중 모델을 용도별로 라우팅</li>
+        <li><b>관측성(Observability)</b> — Langfuse로 모델별 호출·토큰·비용을 추적하고 운영 상태를 상시 모니터링</li>
+        <li><b>거버넌스</b> — 팀·용도별 API Key 발급과 사용량 예산(Budget) 관리로 비용 통제</li>
+      </ul>
+      <div class="proj-stack"><span class="chip">LiteLLM</span><span class="chip">Langfuse</span><span class="chip">Python</span><span class="chip">Docker</span></div>
+    </div>
+
+    <!-- P2 -->
+    <div class="proj">
+      <div class="proj-top">
+        <div class="proj-title">RAG 기반 AI 챗봇 시스템</div>
+        <span class="proj-tag pt-rag">RAG · LLM</span>
+      </div>
+      <p class="proj-desc">검색-증강-생성으로 이어지는 RAG 파이프라인과 벡터 DB 기반 메모리 시스템을 설계·운영.</p>
+      <ul class="proj-points">
+        <li><b>GraphRAG 파이프라인</b> — 문서 인덱싱부터 검색·증강·생성까지 전체 흐름 구현</li>
+        <li><b>벡터 메모리</b> — ChromaDB 기반 장기 대화 메모리와 주기적 요약 구조 설계</li>
+        <li><b>운영 안정성</b> — 대규모 임베딩 데이터의 무손실 보존을 위한 볼륨·백업 정책 수립</li>
+      </ul>
+      <div class="proj-stack"><span class="chip">RAG</span><span class="chip">GraphRAG</span><span class="chip">ChromaDB</span><span class="chip">FastAPI</span><span class="chip">Python</span></div>
+    </div>
+
+    <!-- P3 -->
+    <div class="proj">
+      <div class="proj-top">
+        <div class="proj-title">홈랩 인프라 플랫폼</div>
+        <span class="proj-tag pt-infra">INFRA · OPS</span>
+      </div>
+      <p class="proj-desc">21대 규모의 서버 노드를 메시 네트워크로 묶어 컨테이너 서비스를 배포·운영하는 자체 인프라.</p>
+      <ul class="proj-points">
+        <li><b>네트워크</b> — WireGuard 메시 VPN으로 분산 노드를 단일 사설망으로 통합</li>
+        <li><b>컨테이너 운영</b> — Docker·Portainer로 서비스 배포, VMware vSphere로 가상화 관리</li>
+        <li><b>모니터링</b> — Zabbix로 CPU·메모리·디스크·컨테이너 상태 90여 개 트리거 구성</li>
+      </ul>
+      <div class="proj-stack"><span class="chip">WireGuard</span><span class="chip">Docker</span><span class="chip">Portainer</span><span class="chip">VMware</span><span class="chip">Zabbix</span></div>
+    </div>
+
+    <!-- P4 -->
+    <div class="proj">
+      <div class="proj-top">
+        <div class="proj-title">분산 SIEM 보안 모니터링</div>
+        <span class="proj-tag pt-sec">SECURITY · AUTOMATION</span>
+      </div>
+      <p class="proj-desc">여러 호스트의 로그를 중앙 수집해 공격을 상관 분석하고, 차단을 자동 전파하는 경량 SIEM.</p>
+      <ul class="proj-points">
+        <li><b>로그 수집</b> — rsyslog로 분산 호스트 로그를 중앙화, SQLite FTS5로 전문 검색</li>
+        <li><b>자동 대응</b> — Discord 봇 기반 원클릭 IP 차단을 다수 에이전트 서버로 전파</li>
+        <li><b>이상 탐지</b> — 호스트 간 공격 상관분석과 AI 기반 이상 징후 탐지</li>
+      </ul>
+      <div class="proj-stack"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">SQLite</span><span class="chip">rsyslog</span></div>
+    </div>
+
+    <!-- P5 -->
+    <div class="proj">
+      <div class="proj-top">
+        <div class="proj-title">CampusFlow · 학과 통합 포털</div>
+        <span class="proj-tag pt-infra">FULL-STACK · 캡스톤</span>
+      </div>
+      <p class="proj-desc">학생 관리와 진로 로드맵을 제공하는 학과 포털. 풀스택 개발과 다수 외부 API 연동.</p>
+      <ul class="proj-points">
+        <li><b>듀얼 AI 진로 로드맵</b> — 폐쇄형 RAG와 오픈 인터넷 토글을 결합한 진로 추천</li>
+        <li><b>외부 연동</b> — 워크넷·Q-Net 등 공공 API 연동, 졸업요건 추적 기능</li>
+      </ul>
+      <div class="proj-stack"><span class="chip">FastAPI</span><span class="chip">Next.js</span><span class="chip">MySQL</span><span class="chip">RAG</span></div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience">
+    <div class="sec-head"><span class="idx">/ 03</span><h2>경력</h2></div>
+    <div class="row">
+      <div class="row-meta">
+        <div class="when">약 1년</div>
+        <div class="where">아이와이씨앤씨(주) · 전산팀</div>
+      </div>
+      <div class="row-body">
+        <h3>서버 운영 · 웹 풀스택 개발</h3>
+        <ul>
+          <li>다수 서버 설치·보안 관리 및 상태 상시 모니터링, 이상 징후 조기 대응</li>
+          <li>시스템 운영 지원 및 내부 부서 IT 요청·문의 대응</li>
+          <li>웹 풀스택 개발을 통한 데이터 처리·관리 및 시스템 구조 이해</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION & CERTS ===== -->
+  <section id="education">
+    <div class="sec-head"><span class="idx">/ 04</span><h2>학력 &amp; 자격</h2></div>
+    <div class="row">
+      <div class="row-meta"><div class="when">전공</div><div class="where">전주비전대학교</div></div>
+      <div class="row-body"><h3>AI 컴퓨터정보과</h3></div>
+    </div>
+    <div class="row">
+      <div class="row-meta"><div class="when">자격증</div><div class="where">IT · OA</div></div>
+      <div class="row-body">
+        <div class="cert-grid">
+          <span class="cert">정보처리산업기사 <span class="s">필기 합격</span></span>
+          <span class="cert">정보처리기능사</span>
+          <span class="cert">MOS Excel Expert</span>
+          <span class="cert">MOS PowerPoint</span>
+          <span class="cert">ITQ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="foot-head">모델을 <span class="em">서비스로</span> 연결하는<br>엔지니어를 찾고 있다면.</div>
+    <div class="links">
+      <a class="link" href="mailto:your.email@example.com"><span class="k">email</span> ruddls030@naver.com</a>
+      <a class="link" href="https://github.com/chickiyeah" target="_blank" rel="noopener"><span class="k">github</span> /chickiyeah</a>
+      <span class="link"><span class="k">tel</span> 010-6519-9033</span>
+    </div>
+    <div class="sig">// 나경원 · MLOps · AI Infrastructure Engineer</div>
+  </footer>
+
+</div>
+
+<script>
+  // metric count-up
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const nums = document.querySelectorAll('.metric .num');
+  function run(el){
+    const to = +el.dataset.to;
+    const val = el.querySelector('.val');
+    if(reduce){ val.textContent = to; return; }
+    let cur=0, step=Math.max(1,Math.round(to/28));
+    const t=setInterval(()=>{cur+=step; if(cur>=to){cur=to;clearInterval(t)} val.textContent=cur;},26);
+  }
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){run(e.target);io.unobserve(e.target)}})},{threshold:.5});
+  nums.forEach(n=>{n.querySelector('.val').textContent='0';io.observe(n)});
+</script>
+</body>
+</html>
