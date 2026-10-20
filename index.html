@@ -925,364 +925,434 @@
   </section>
 
 
-  <!-- ========================================
-       PROJECTS
-  ========================================= -->
+<!-- ========================================
+     PROJECTS
+========================================= -->
 
-  <section id="projects">
+<section id="projects">
 
-    <div class="sec-head">
-      <span class="idx">/ 02</span>
-      <h2>주요 프로젝트</h2>
-    </div>
+  <div class="sec-head">
+    <span class="idx">/ 02</span>
+    <h2>주요 프로젝트</h2>
+  </div>
 
 
-    <!-- ====================================
-         FOC
-    ===================================== -->
+  <!-- ====================================
+       FOC
+  ===================================== -->
 
-    <div class="proj featured">
+  <div class="proj featured">
 
-      <div class="proj-top">
+    <div class="proj-top">
 
-        <div>
+      <div>
 
-          <div class="featured-name">
+        <div class="featured-name">
 
-            <div class="proj-title">
-              FOC · Fleet Operations Control Plane
-            </div>
-
-            <span class="live-badge">
-              PRODUCTION
-            </span>
-
+          <div class="proj-title">
+            FOC · Fleet Operations Control Plane
           </div>
 
-        </div>
+          <span class="live-badge">
+            PRODUCTION
+          </span>
 
-        <span class="proj-tag pt-core">
-          FEATURED · PLATFORM
-        </span>
-
-      </div>
-
-
-      <p class="featured-lead">
-        물리 서버부터 가상화·컨테이너·네트워크·CI/CD·LLM·AI Agent까지
-        분산 인프라의 운영 계층을 하나의 제어면으로 통합하기 위해 직접 설계·구축한
-        <b>Fleet Operations Console</b>.
-        단순 대시보드가 아니라 조회·실행·승인·감사·자동화가 연결된 실제 운영 시스템입니다.
-      </p>
-
-
-      <div class="foc-grid">
-
-        <div class="foc-module">
-          <h4>INFRASTRUCTURE CONTROL</h4>
-          <p>
-            물리 서버, VMware, Docker, 스토리지,
-            BMC/iLO/iDRAC, 원격 전원 제어와
-            하드웨어 센서 상태를 하나의 운영 계층에서 관리.
-          </p>
-        </div>
-
-
-        <div class="foc-module">
-          <h4>AI CONTROL PLANE</h4>
-          <p>
-            MCP 기반 AI Agent를 OAuth 클라이언트로 관리하고
-            권한·세션·토큰·승인·감사를 통해
-            AI의 실제 인프라 접근을 통제.
-          </p>
-        </div>
-
-
-        <div class="foc-module">
-          <h4>LLM / MLOPS</h4>
-          <p>
-            LiteLLM 기반 다중 모델 게이트웨이와
-            Langfuse 관측을 연결해 요청·토큰·지연시간·비용,
-            API Key별 예산과 모델 상태를 추적.
-          </p>
-        </div>
-
-
-        <div class="foc-module">
-          <h4>NETWORK & EDGE</h4>
-          <p>
-            WireGuard, Cloudflare DNS, Reverse Proxy,
-            인증서와 Edge Node 상태를 통합하고
-            서비스 경로와 네트워크 상태를 관리.
-          </p>
-        </div>
-
-
-        <div class="foc-module">
-          <h4>DEVOPS & AUTOMATION</h4>
-          <p>
-            Jenkins CI, 배포·릴리스·롤백,
-            cron·systemd·Windows 예약 작업,
-            백그라운드 작업과 자율 루프를 통합 관리.
-          </p>
-        </div>
-
-
-        <div class="foc-module">
-          <h4>OBSERVABILITY & SECURITY</h4>
-          <p>
-            Zabbix·중앙 로그·Langfuse·감사 로그를 연결해
-            장애와 이상 징후를 탐지하고
-            운영자가 판단해야 할 이벤트를 한곳에 집계.
-          </p>
         </div>
 
       </div>
 
+      <span class="proj-tag pt-core">
+        FEATURED · PLATFORM
+      </span>
 
-      <ul class="proj-points">
-
-        <li>
-          <b>Agent 권한 통제</b> —
-          OAuth 기반 외부 AI Agent의 권한과 세션·토큰 상태를 관리하고,
-          실행 권한을 읽기·쓰기·승인 필요 작업 등으로 구분
-        </li>
-
-        <li>
-          <b>Human-in-the-loop</b> —
-          위험도가 있는 실행 요청을 승인 대기열로 분리하고
-          요청자·도구·결과·결정 이력을 감사 로그로 보존
-        </li>
-
-        <li>
-          <b>실제 인프라 실행</b> —
-          MCP와 로컬 서브에이전트를 통해
-          서버·컨테이너·배포 계층의 작업을 원격 위임·실행
-        </li>
-
-        <li>
-          <b>하드웨어 계층 관리</b> —
-          HPE iLO / Dell iDRAC 계열 BMC를 통해
-          CPU·메모리·팬·온도·PSU·스토리지·BIOS 상태 확인
-        </li>
-
-        <li>
-          <b>컨테이너 운영</b> —
-          분산 Docker 호스트의 컨테이너 목록·로그·자원 사용량 조회와
-          관리 작업을 중앙화
-        </li>
-
-        <li>
-          <b>CI/CD</b> —
-          Jenkins 작업 상태와 콘솔 로그를 통합하고
-          빌드·배포·릴리스·롤백 흐름을 운영 환경과 연결
-        </li>
-
-        <li>
-          <b>네트워크 운영</b> —
-          WireGuard 피어, Reverse Proxy,
-          Cloudflare 기반 DNS·도메인·인증서 상태를 통합 관리
-        </li>
-
-        <li>
-          <b>백업</b> —
-          운영 서비스 백업을 암호화된 외부 저장소와 연계하고
-          백업 성공 여부와 보존 상태를 확인
-        </li>
-
-        <li>
-          <b>LLM Observability</b> —
-          모델별 요청량·입출력 토큰·reasoning·latency와
-          호출 실패 데이터를 수집해 운영 상태 분석
-        </li>
-
-        <li>
-          <b>FinOps</b> —
-          모델별 비용과 API Key별 spend / budget을 추적해
-          AI 사용량을 운영 비용 관점에서도 관리
-        </li>
-
-      </ul>
+    </div>
 
 
-      <div class="foc-proof">
-        <b>운영 원칙</b> —
-        AI가 판단할 수 있는 영역과 사람이 승인해야 하는 영역을 분리하고,
-        실행 결과가 추적 가능하도록 권한·승인·감사를 제어면에 포함했습니다.
+    <p class="featured-lead">
+      물리 서버부터 가상화·컨테이너·네트워크·CI/CD·LLM·AI Agent까지
+      분산 인프라의 운영 계층을 하나의 제어면으로 통합하기 위해 직접 설계·구축한
+      <b>Fleet Operations Control Plane</b>.
+      단순 모니터링 대시보드가 아니라 조회·실행·승인·감사·자동화를 연결해
+      실제 인프라를 운영하기 위한 통합 제어 시스템입니다.
+    </p>
+
+
+    <div class="foc-grid">
+
+      <div class="foc-module">
+        <h4>INFRASTRUCTURE CONTROL</h4>
+        <p>
+          물리 서버, VMware, Docker, 스토리지,
+          BMC/iLO/iDRAC, 원격 전원 제어와
+          하드웨어 센서 상태를 하나의 운영 계층에서 관리.
+        </p>
       </div>
 
 
-      <div class="proj-stack">
+      <div class="foc-module">
+        <h4>AI CONTROL PLANE</h4>
+        <p>
+          MCP 기반 AI Agent와 로컬 서브에이전트를
+          권한·세션·승인·감사 체계 안에서 운영하고,
+          AI의 실제 인프라 접근과 실행을 통제.
+        </p>
+      </div>
 
-        <span class="chip">Python</span>
-        <span class="chip">FastAPI</span>
-        <span class="chip">MCP</span>
-        <span class="chip">OAuth 2.0</span>
-        <span class="chip">RBAC</span>
 
-        <span class="chip">LiteLLM</span>
-        <span class="chip">Langfuse</span>
+      <div class="foc-module">
+        <h4>LLM / MLOPS</h4>
+        <p>
+          LiteLLM 기반 다중 모델 게이트웨이와
+          Langfuse 관측을 연결해 요청·토큰·지연시간·비용,
+          API Key별 예산과 모델 상태를 추적.
+        </p>
+      </div>
 
-        <span class="chip">Docker</span>
-        <span class="chip">VMware</span>
-        <span class="chip">BMC / Redfish</span>
 
-        <span class="chip">WireGuard</span>
-        <span class="chip">Cloudflare</span>
+      <div class="foc-module">
+        <h4>NETWORK & EDGE</h4>
+        <p>
+          WireGuard, Cloudflare DNS, Reverse Proxy,
+          인증서와 Edge Node 상태를 통합하고
+          서비스 경로와 네트워크 상태를 관리.
+        </p>
+      </div>
 
-        <span class="chip">Jenkins</span>
-        <span class="chip">Zabbix</span>
-        <span class="chip">rsyslog</span>
 
+      <div class="foc-module">
+        <h4>DEVOPS & AUTOMATION</h4>
+        <p>
+          Jenkins CI, 배포·릴리스·롤백,
+          cron·systemd·Windows 예약 작업,
+          백그라운드 작업과 자율 루프를 통합 관리.
+        </p>
+      </div>
+
+
+      <div class="foc-module">
+        <h4>OBSERVABILITY & SECURITY</h4>
+        <p>
+          Zabbix·중앙 로그·Langfuse·감사 로그를 연결해
+          장애와 이상 징후를 탐지하고
+          운영자가 판단해야 할 이벤트를 한곳에 집계.
+        </p>
       </div>
 
     </div>
 
 
-    <!-- ====================================
-         NEURON MEMORY
-    ===================================== -->
+    <ul class="proj-points">
 
-    <div class="proj">
+      <li>
+        <b>Agent 권한 통제</b> —
+        OAuth 기반 외부 AI Agent의 권한과 세션·토큰 상태를 관리하고,
+        실행 권한을 읽기·쓰기·승인 필요 작업 등으로 구분
+      </li>
 
-      <div class="proj-top">
+      <li>
+        <b>Human-in-the-loop</b> —
+        위험도가 있는 실행 요청을 승인 대기열로 분리하고
+        요청자·도구·결과·결정 이력을 감사 로그로 보존
+      </li>
 
-        <div class="proj-title">
-          뉴런형 기억 · Graph-based Long-term Memory
-        </div>
+      <li>
+        <b>실제 인프라 실행</b> —
+        MCP와 로컬 서브에이전트를 통해
+        서버·컨테이너·배포 계층의 작업을 원격 위임·실행
+      </li>
 
-        <span class="proj-tag pt-rag">
-          AI R&D · MEMORY
-        </span>
+      <li>
+        <b>하드웨어 계층 관리</b> —
+        HPE iLO / Dell iDRAC 계열 BMC를 통해
+        CPU·메모리·팬·온도·PSU·스토리지·BIOS 상태 확인
+      </li>
 
+      <li>
+        <b>컨테이너 운영</b> —
+        분산 Docker 호스트의 컨테이너 목록·로그·자원 사용량 조회와
+        관리 작업을 중앙화
+      </li>
+
+      <li>
+        <b>CI/CD</b> —
+        Jenkins 작업 상태와 콘솔 로그를 통합하고
+        빌드·배포·릴리스·롤백 흐름을 운영 환경과 연결
+      </li>
+
+      <li>
+        <b>네트워크 운영</b> —
+        WireGuard 피어, Reverse Proxy,
+        Cloudflare 기반 DNS·도메인·인증서 상태를 통합 관리
+      </li>
+
+      <li>
+        <b>백업</b> —
+        운영 서비스 백업을 암호화된 외부 저장소와 연계하고
+        백업 성공 여부와 보존 상태를 확인
+      </li>
+
+      <li>
+        <b>LLM Observability</b> —
+        모델별 요청량·입출력 토큰·reasoning·latency와
+        호출 실패 데이터를 수집해 운영 상태 분석
+      </li>
+
+      <li>
+        <b>FinOps</b> —
+        모델별 비용과 API Key별 spend / budget을 추적해
+        AI 사용량을 운영 비용 관점에서도 관리
+      </li>
+
+    </ul>
+
+
+    <div class="foc-proof">
+      <b>설계 원칙</b> —
+      AI가 판단할 수 있는 영역과 사람이 승인해야 하는 영역을 분리하고,
+      실제 실행이 일어나는 모든 경로를 권한·승인·감사 가능한 제어면 안에 두었습니다.
+    </div>
+
+
+    <div class="proj-stack">
+
+      <span class="chip">Python</span>
+      <span class="chip">FastAPI</span>
+      <span class="chip">MCP</span>
+      <span class="chip">OAuth 2.0</span>
+      <span class="chip">RBAC</span>
+
+      <span class="chip">LiteLLM</span>
+      <span class="chip">Langfuse</span>
+
+      <span class="chip">Docker</span>
+      <span class="chip">VMware</span>
+      <span class="chip">BMC / Redfish</span>
+
+      <span class="chip">WireGuard</span>
+      <span class="chip">Cloudflare</span>
+
+      <span class="chip">Jenkins</span>
+      <span class="chip">Zabbix</span>
+      <span class="chip">rsyslog</span>
+
+    </div>
+
+  </div>
+
+
+  <!-- ====================================
+       HARU & LUNA
+  ===================================== -->
+
+  <div class="proj">
+
+    <div class="proj-top">
+
+      <div class="proj-title">
+        하루·루나 · Stateful AI Agent &amp; Memory Platform
       </div>
 
-
-      <p class="proj-desc">
-        단순 벡터 유사도 검색을 넘어
-        장기 기억을 그래프 구조와 다중 검색 채널로 연결하기 위해 설계한
-        AI Memory R&amp;D 프로젝트.
-        실제 평가 세트와 정량 지표를 사용해 구조 변경의 효과를 반복 검증했습니다.
-      </p>
-
-
-      <ul class="proj-points">
-
-        <li>
-          <b>그래프 기반 기억</b> —
-          semantic·temporal·entity 관계를 활용한
-          장기 기억 탐색 구조 설계
-        </li>
-
-        <li>
-          <b>메모리 격리</b> —
-          trust domain과 partition을 두어
-          사용자 직접 정보·모델 생성 정보·레거시 데이터를 구분
-        </li>
-
-        <li>
-          <b>Provenance</b> —
-          기억의 생성 출처와 신뢰 영역을 보존해
-          검색 결과의 기원을 추적할 수 있도록 설계
-        </li>
-
-        <li>
-          <b>정량 평가</b> —
-          Recall@10, useful path rate 등 평가 지표를 사용해
-          그래프 탐색 전략과 검색 품질을 비교
-        </li>
-
-        <li>
-          <b>실험 기반 개발</b> —
-          변경 → 평가 → HOLD/GO 판정 과정을 반복하며
-          성능 향상이 검증되지 않은 변경은 운영 반영에서 제외
-        </li>
-
-      </ul>
-
-
-      <div class="proj-stack">
-
-        <span class="chip">Python</span>
-        <span class="chip">Graph Memory</span>
-        <span class="chip">Vector Search</span>
-        <span class="chip">RAG</span>
-        <span class="chip">ACL</span>
-        <span class="chip">Evaluation</span>
-
-      </div>
+      <span class="proj-tag pt-rag">
+        AI SYSTEM · MEMORY R&amp;D
+      </span>
 
     </div>
 
 
-    <!-- ====================================
-         CAMPUS FLOW
-    ===================================== -->
-
-    <div class="proj">
-
-      <div class="proj-top">
-
-        <div class="proj-title">
-          CampusFlow · 학과 통합 포털
-        </div>
-
-        <span class="proj-tag pt-infra">
-          FULL-STACK · CAPSTONE
-        </span>
-
-      </div>
+    <p class="proj-desc">
+      Discord 환경에서 장기간 사용자와 상호작용하는 캐릭터 AI를 위해
+      대화 생성뿐 아니라 <b>기억의 생성·검색·연결·평가·교정·관측</b>까지
+      하나의 시스템으로 구축한 Stateful AI Agent 프로젝트.
+      실제 장기 운영 과정에서 축적되는 대규모 기억을 기반으로
+      캐릭터가 과거의 사용자·사건·관계와 자신의 경험을 지속적으로 활용할 수 있도록 설계했습니다.
+    </p>
 
 
-      <p class="proj-desc">
-        학생 관리와 진로 로드맵을 제공하는 학과 통합 포털.
-        웹 애플리케이션 개발뿐 아니라
-        외부 공공 API와 AI 검색·추천 기능을 하나의 서비스로 연결했습니다.
-      </p>
+    <ul class="proj-points">
+
+      <li>
+        <b>Persistent Long-term Memory</b> —
+        대화·사용자 사실·관찰·일기·자기성찰 등 서로 다른 유형의 기억을
+        장기 저장하고 이후 대화에서 다시 검색할 수 있는 기억 계층 구축
+      </li>
+
+      <li>
+        <b>Autonomous Conversation Memory</b> —
+        하루와 루나 사이에서 생성되는 자율대화를 별도의 기억 흐름으로 축적해
+        사용자 입력이 없는 상황에서도 캐릭터의 경험과 관계가 이어지도록 설계
+      </li>
+
+      <li>
+        <b>Graph-based Memory</b> —
+        기억에서 인물·개념·사건을 추출하고 관계 그래프로 연결해
+        단순 벡터 유사도만으로는 찾기 어려운 연관 기억을 탐색
+      </li>
+
+      <li>
+        <b>Multi-channel Retrieval</b> —
+        semantic·temporal·entity 등 여러 검색 채널을 결합하고
+        기억의 유형과 상황에 따라 서로 다른 탐색 경로를 사용할 수 있도록 구성
+      </li>
+
+      <li>
+        <b>Memory Clustering</b> —
+        임베딩 공간에서 관련 기억을 군집화하고
+        군집별 키워드·캐릭터·사용자·기억 유형·연관 군집을 분석해
+        장기 기억의 구조를 관측
+      </li>
+
+      <li>
+        <b>Recall Inspection</b> —
+        실제 질문을 입력해 어떤 기억이 검색되는지 직접 재현하고
+        캐릭터별 검색 결과와 주변 문맥을 확인할 수 있는
+        회상 미리보기 도구 구현
+      </li>
+
+      <li>
+        <b>Memory Curator</b> —
+        잘못 분류되거나 신뢰도가 낮은 기억을 사람이 검토하고
+        분류·출처·identity·disposition 등의 메타데이터를 교정하는
+        Human-in-the-loop 관리 도구 구축
+      </li>
+
+      <li>
+        <b>Human Gold Dataset</b> —
+        실제 운영 기억을 사람이 직접 라벨링한 평가 데이터셋을 구축해
+        AI가 제안한 기억 분류와 검색 전략을 사람 기준 정답과 비교할 수 있도록 설계
+      </li>
+
+      <li>
+        <b>Trust Domain &amp; Provenance</b> —
+        USER_DIRECT·MODEL_GENERATED·DISTILLED·UNKNOWN_LEGACY 등
+        기억의 생성 출처와 신뢰 영역을 구분하고
+        provenance를 유지해 기억의 기원을 추적
+      </li>
+
+      <li>
+        <b>Memory Isolation / ACL</b> —
+        사용자·캐릭터·기억 영역별 접근 경계를 두어
+        검색 과정에서 다른 사용자나 격리 영역의 기억이
+        잘못 노출되지 않도록 ACL 검증 적용
+      </li>
+
+      <li>
+        <b>Evaluation Gate</b> —
+        evidence 규모·provenance 다양성·그래프 집중도·UNKNOWN_LEGACY 의존도와
+        blind holdout 조건 등을 검사해
+        재실험 가능 여부를 정량적으로 판정
+      </li>
+
+      <li>
+        <b>Experiment-driven Development</b> —
+        Recall@10, useful path rate 등 정량 지표를 기준으로
+        검색 구조 변경 전후를 비교하고
+        개선이 입증되지 않은 변경은 HOLD 처리
+      </li>
+
+    </ul>
 
 
-      <ul class="proj-points">
-
-        <li>
-          <b>AI 진로 로드맵</b> —
-          내부 데이터 기반 RAG와 외부 인터넷 검색을
-          상황에 따라 구분해 활용하는 진로 추천 구조 구현
-        </li>
-
-        <li>
-          <b>외부 API 연동</b> —
-          워크넷·Q-Net 등 공공 API를 연계해
-          진로·자격 정보를 서비스 내부 데이터와 통합
-        </li>
-
-        <li>
-          <b>학사 기능</b> —
-          학생 관리와 졸업요건 추적 등
-          학과 운영에 필요한 기능을 웹 서비스로 구현
-        </li>
-
-        <li>
-          <b>서비스 운영</b> —
-          Backend·Frontend·DB·AI 기능을
-          하나의 실제 배포 환경으로 구성
-        </li>
-
-      </ul>
+    <div class="foc-proof">
+      <b>핵심 설계 방향</b> —
+      LLM에게 모든 대화를 그대로 다시 제공하는 방식이 아니라,
+      기억을 독립된 데이터 계층으로 관리하고
+      <b>저장 → 구조화 → 검색 → 회상 → 평가 → 사람 검증 → 재실험</b>의
+      전체 수명주기를 제어할 수 있도록 구성했습니다.
+    </div>
 
 
-      <div class="proj-stack">
+    <div class="proj-stack">
 
-        <span class="chip">FastAPI</span>
-        <span class="chip">Next.js</span>
-        <span class="chip">MySQL</span>
-        <span class="chip">RAG</span>
-        <span class="chip">REST API</span>
+      <span class="chip">Python</span>
+      <span class="chip">Discord Bot</span>
+      <span class="chip">LLM</span>
+      <span class="chip">Long-term Memory</span>
 
-      </div>
+      <span class="chip">Graph Memory</span>
+      <span class="chip">Vector Search</span>
+      <span class="chip">Embeddings</span>
+      <span class="chip">RAG</span>
+
+      <span class="chip">Memory Clustering</span>
+      <span class="chip">Provenance</span>
+      <span class="chip">ACL</span>
+
+      <span class="chip">Human-in-the-loop</span>
+      <span class="chip">Evaluation</span>
 
     </div>
 
-  </section>
+  </div>
+
+
+  <!-- ====================================
+       CAMPUS FLOW
+  ===================================== -->
+
+  <div class="proj">
+
+    <div class="proj-top">
+
+      <div class="proj-title">
+        CampusFlow · 학과 통합 포털
+      </div>
+
+      <span class="proj-tag pt-infra">
+        FULL-STACK · CAPSTONE
+      </span>
+
+    </div>
+
+
+    <p class="proj-desc">
+      학생 관리와 진로 로드맵을 제공하는 학과 통합 포털.
+      웹 애플리케이션 개발뿐 아니라
+      외부 공공 API와 AI 검색·추천 기능을 하나의 서비스로 연결했습니다.
+    </p>
+
+
+    <ul class="proj-points">
+
+      <li>
+        <b>AI 진로 로드맵</b> —
+        내부 데이터 기반 RAG와 외부 인터넷 검색을
+        상황에 따라 구분해 활용하는 진로 추천 구조 구현
+      </li>
+
+      <li>
+        <b>외부 API 연동</b> —
+        워크넷·Q-Net 등 공공 API를 연계해
+        진로·자격 정보를 서비스 내부 데이터와 통합
+      </li>
+
+      <li>
+        <b>학사 기능</b> —
+        학생 관리와 졸업요건 추적 등
+        학과 운영에 필요한 기능을 웹 서비스로 구현
+      </li>
+
+      <li>
+        <b>서비스 운영</b> —
+        Backend·Frontend·DB·AI 기능을
+        하나의 실제 배포 환경으로 구성
+      </li>
+
+    </ul>
+
+
+    <div class="proj-stack">
+
+      <span class="chip">FastAPI</span>
+      <span class="chip">Next.js</span>
+      <span class="chip">MySQL</span>
+      <span class="chip">RAG</span>
+      <span class="chip">REST API</span>
+
+    </div>
+
+  </div>
+
+</section>
 
 
   <!-- ========================================
